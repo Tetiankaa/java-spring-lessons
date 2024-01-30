@@ -1,0 +1,35 @@
+Java Spring Boot is a tool that makes developing web application with Spring Framework faster and easier.
+    spring-data-jpa dependency: manages the interaction between Java objects and the database.
+    spring-web: provides support for building web applications using the Spring framework.
+
+When a class is annotated with @RestController, it indicates that the methods within that class will handle HTTP requests
+and produce HTTP responses for a RESTful web service.
+
+RESTful web services are commonly used for building APIs.
+RESTful systems are designed to have a separation of concerns between the client and the server.
+The client is responsible for the user interface and user experience, while the server is responsible for processing requests and managing resources.
+
+@Configuration annotation is used to indicate that a class contains configuration methods that define the application's bean definitions.
+@Bean annotation indicates that the annotated method will produce a bean to be managed by the Spring IoC container.
+
+@Qualifier is used to resolve ambiguity when there are multiple beans of the same type within the Spring application context.
+
+@Repository is used to indicate that a class is a Data Access Object (DAO), which is typically responsible for interacting with a database.
+
+@Repository and @Configuration are ways of declaring Spring beans.
+    @Repository is typically used for database-related classes (like DAOs),
+    @Configuration is used for general bean configuration classes (explicitly declared with specific values)
+
+@EntityManager is used for managing and interacting with persistent entities in a relational database.
+ It handles the transition of entities between various states, such as new, managed, detached, and removed.
+
+@Transactional ensures that a transaction is started before the method is executed, and it is committed at the end of the method.
+ If an exception occurs during the method execution, the transaction is rolled back.
+ Transactions are usually needed for write operations or modifications to the database.
+
+JpaRepository interface provides a higher-level way to interact with a relational database.
+You don't need to provide the actual implementation for basic CRUD operations; Spring Data JPA takes care of that.
+Besides the basic CRUD operations, you can define custom query methods by following a specific naming convention.
+JpaRepository<Product, Integer> :
+        - Product: specify the entity type
+        - Integer: specify the type of the primary key of that entity
