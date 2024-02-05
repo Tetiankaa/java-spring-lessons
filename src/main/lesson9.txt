@@ -1,0 +1,28 @@
+@Column(unique = true): a particular column in a database table should have a unique constraint.
+
+@RestControllerAdvice is used to define a class that will provide centralized exception handling, data binding,
+and model attributes for all @RestController classes in Spring application.
+
+@ExceptionHandler: useful for handling and translating exceptions into appropriate HTTP.
+
+DTO stands for Data Transfer Object.
+ DTO is an object that carries data between software application layers or different parts of a system.
+ The primary purpose of a DTO is to encapsulate data and transfer it between components.
+ You can send only the necessary data fields rather than entire entities, reducing the amount of data transferred over the network.
+ DTOs often involve transforming data from one format to another. For example, converting database entities to a format suitable for presentation in UI.
+
+@JsonView annotation allows to specify different views for serialization in different parts of application.
+By annotating controller methods with @JsonView and specifying the desired view,you control which fields are included in the JSON response for each endpoint.
+
+@Component is used to declare a class as a Spring bean.
+This means that Spring will manage the lifecycle of this class, and you can inject it into other components in your Spring application.
+
+@Repository, you are explicitly indicating to Spring that the annotated class is a repository, typically responsible for database interactions.
+
+    Project structure:
+        - controllers: Contains classes responsible for handling HTTP requests and managing the flow of control in the application.
+        - dao: Contains classes responsible for data access and interacting with the database.
+        - dto: Contains classes representing Data Transfer Objects
+        - mapper: handle the conversion of entities to DTOs and vice versa.
+        - service: interact with DAOs, perform business operations, and serve as an intermediate layer between controllers and DAOs.
+        - util: Contains utility classes or classes related to configuration.
