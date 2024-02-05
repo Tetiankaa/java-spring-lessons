@@ -33,4 +33,5 @@ build/
 .vscode/
 
 ### Docker configuration ###
-/src/main/docker
+/src/main/docker/.env-mysql
+/src/main/docker/docker-compose.yml
