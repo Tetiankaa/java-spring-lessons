@@ -26,3 +26,7 @@ This means that Spring will manage the lifecycle of this class, and you can inje
         - mapper: handle the conversion of entities to DTOs and vice versa.
         - service: interact with DAOs, perform business operations, and serve as an intermediate layer between controllers and DAOs.
         - util: Contains utility classes or classes related to configuration.
+
+ MethodArgumentNotValidException:This exception is thrown during the validation of method arguments annotated with @Valid
+ ConstraintViolationException: This exception is more low-level and is often associated with validation errors at the persistence level.
+     It is thrown when an attempt is made to persist an entity, and the entity fails to satisfy the validation constraints defined in the entity class.
