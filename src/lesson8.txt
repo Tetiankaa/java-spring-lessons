@@ -1,6 +1,7 @@
 Java Spring Boot is a tool that makes developing web application with Spring Framework faster and easier.
     spring-data-jpa dependency: manages the interaction between Java objects and the database.
     spring-web: provides support for building web applications using the Spring framework.
+ Spring Boot is an extension of the Spring framework, which eliminates the boilerplate configurations required for setting up a Spring application
 
 When a class is annotated with @RestController, it indicates that the methods within that class will handle HTTP requests
 and produce HTTP responses for a RESTful web service.
