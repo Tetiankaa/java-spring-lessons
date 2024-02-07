@@ -1,0 +1,15 @@
+[
+  {
+    "name": "phone",
+    "price": 1320.0,
+    "quantity": 3
+  },  {
+    "name": "laptop",
+    "price": 2549.0,
+    "quantity": 5
+  },  {
+    "name": "iPad",
+    "price": 799.0,
+    "quantity": 1
+  }
+]
