@@ -2,6 +2,7 @@ package com.example.javaspringlessons.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class MailService {
-    private final MailSender mailSender;
+
+   private final MailSender mailSender;
 
     @Value("${spring.mail.username}")
     private String mailFrom;
