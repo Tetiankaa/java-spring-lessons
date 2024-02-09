@@ -35,5 +35,3 @@ build/
 ### Docker ###
 /src/main/docker/.env-mysql
 /src/main/docker/docker-compose.yml
-
-/src/main/resources/application.properties

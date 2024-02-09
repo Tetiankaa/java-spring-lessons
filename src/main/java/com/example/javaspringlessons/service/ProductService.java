@@ -1,6 +1,6 @@
 package com.example.javaspringlessons.service;
 
-import com.example.javaspringlessons.dao.ProductDAO;
+import com.example.javaspringlessons.repository.ProductDAO;
 import com.example.javaspringlessons.dto.ProductDTO;
 import com.example.javaspringlessons.entity.Product;
 import com.example.javaspringlessons.mapper.ProductMapper;

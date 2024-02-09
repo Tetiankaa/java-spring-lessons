@@ -1,4 +1,4 @@
-package com.example.javaspringlessons.dao;
+package com.example.javaspringlessons.repository;
 
 import com.example.javaspringlessons.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
