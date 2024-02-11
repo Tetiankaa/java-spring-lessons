@@ -28,3 +28,14 @@ ObjectMapper is a class provided by Jackson library that is used for JSON serial
 MultipartFile represents the uploaded file.
 
 TypeReference<T> helps Jackson correctly deserialize JSON into objects of the specified type.
+
+JavaMailSender is used for sending emails.
+
+MimeMessage represents a MIME mail message.
+MIME stands for Multipurpose Internet Mail Extensions.
+
+MimeMessageHelper is used for setting up the MIME message.
+
+Files.readAllBytes(): Reads all bytes from the image file and stores them in a byte array.
+ByteArrayDataSource provides a way to create a DataSource object from a byte array.
+ It's commonly used to represent binary data, such as images or files, as an attachment in email messages.
