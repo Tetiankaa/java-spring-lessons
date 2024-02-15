@@ -26,9 +26,36 @@ OncePerRequestFilter class ensures that the doFilterInternal method is only exec
 
 userDetailsService is a service responsible for loading user details.
 
-SecurityContext holds the details of the current security context, such as the currently authenticated principal (user), their credentials, and their authorities (roles).
+SecurityContext holds the details of the currently authenticated principal (user), it's credentials, and it's authorities (roles).
   The primary purpose of SecurityContext is to manage security-related information for the current thread.
 
 UsernamePasswordAuthenticationToken is a class that represents an authentication request token.
  When a user attempts to authenticate themselves, their credentials are encapsulated in a UsernamePasswordAuthenticationToken and passed through the authentication process.
   This token is then processed by authentication providers to verify the user's identity and establish authentication.
+
+AuthenticationManager responsible for authenticating users against the UserDetailsService.
+DaoAuthenticationProvider used to authenticate users against a database or a data access object (DAO).
+
+HttpSecurity configure security settings for HTTP requests.
+
+CSRF (Cross-Site Request Forgery): is a type of attack where an attacker tricks a user into performing actions on a website without their knowledge or consent.
+     To mitigate CSRF attacks, Spring Security provides CSRF protection by default.
+
+CORS (Cross-Origin Resource Sharing):is a security feature to restrict web page resources (such as JavaScript) from being requested from another domain.
+
+Session management allows to control how sessions are handled for authenticated users.
+  In a stateless session management policy, no session is created or maintained for authenticated users.
+
+UsernamePasswordAuthenticationFilter is a built-in Spring Security filter responsible for processing username/password-based authentication requests.
+
+WebAuthenticationDetailsSource is a class provided by Spring Security that is responsible for creating WebAuthenticationDetails objects.
+  These objects contain details about the authentication request that are specific to web-based authentication mechanisms.
+
+AuthenticationEntryPoint responsible for handling authentication failures.
+
+Refresh Token Expiration: The refresh token should have a longer expiration time than the access token because its purpose is to provide a way to obtain a new access token
+when the current one expires.
+Since the refresh token is used less frequently than the access token, it is typically set to last longer.
+
+Access Token Expiration: The access token has a shorter expiration time because it is used for authentication and authorization in each request.
+It should be short-lived to minimize the risk of unauthorized access if it is stolen.

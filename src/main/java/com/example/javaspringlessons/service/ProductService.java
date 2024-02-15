@@ -1,25 +1,29 @@
 package com.example.javaspringlessons.service;
 
-import com.example.javaspringlessons.repository.ProductDAO;
 import com.example.javaspringlessons.dto.ProductDTO;
 import com.example.javaspringlessons.entity.Product;
 import com.example.javaspringlessons.mapper.ProductMapper;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
+import com.example.javaspringlessons.repository.ProductDAO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class ProductService {
 
     private final ProductDAO productDAO;
+
     private final ProductMapper mapper;
     private final MailService mailService;
 
-    @Value("${spring.mail.username}")
-    private String mailFrom;
+    public ProductService(ProductDAO productDAO, ProductMapper mapper, MailService mailService) {
+        this.productDAO = productDAO;
+        this.mapper = mapper;
+        this.mailService = mailService;
+    }
+
+    //    @Value("${spring.mail.username}")
+    private String mailFrom = "tanyakorsun0208@gmail.com";
 
     public List<ProductDTO> getAll(){
         List<Product> products = productDAO.findAll();
