@@ -24,6 +24,8 @@ This signature is appended to the token, and the resulting JWT is transmitted to
 
 OncePerRequestFilter class ensures that the doFilterInternal method is only executed once per request.
 
+UserDetails represents core user information retrieved from an authentication system.
+
 userDetailsService is a service responsible for loading user details.
 
 SecurityContext holds the details of the currently authenticated principal (user), it's credentials, and it's authorities (roles).
@@ -59,3 +61,19 @@ Since the refresh token is used less frequently than the access token, it is typ
 
 Access Token Expiration: The access token has a shorter expiration time because it is used for authentication and authorization in each request.
 It should be short-lived to minimize the risk of unauthorized access if it is stolen.
+
+****  OAUTH 2 ****
+
+OAuth (Open Authorization) 2.0 - allows users to grant third-party applications limited access to their accounts without having to share their login and password.
+    How it works?
+        1. The user applies to the application with a request for access to certain resources.
+        2. The application redirects the user to the service provider's authorization page.
+        3. After successful authorization, the service provider issues an access token.
+        4. The application uses this token to access the user's resources.
+
+spring.security.oauth2.resourceserver.jwt.issuer-uri: - specifies the URI that issues JSON Web Tokens (JWTs).
+spring.security.oauth2.resourceserver.jwt.jwk-set-uri: - specifies the URI where the JSON Web Key (JWK) Set is located.
+
+.oauth2ResourceServer(...):  is used to configure the OAuth 2.0 resource server settings.
+oauth2configurer.jwt(...): configures JWT authentication for the OAuth 2.0 resource server.
+Customizer.withDefaults(): allows for additional customization through the Customizer if needed.
