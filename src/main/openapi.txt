@@ -1,0 +1,6 @@
+Idempotence refers to the property of an API operation where performing the same operation multiple times has the same effect as performing it once.
+This means that regardless of how many times you invoke the operation with the same input parameters, the result remains the same.
+
+
+An API specification, such as Swagger, is a formal document that describes the functionality, endpoints, request/response formats, and other details of an API.
+It serves as a contract between the API provider and consumers, outlining how the API should be used and what behavior can be expected from it.
