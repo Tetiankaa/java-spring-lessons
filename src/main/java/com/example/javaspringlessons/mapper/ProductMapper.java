@@ -1,6 +1,6 @@
 package com.example.javaspringlessons.mapper;
 
-import com.example.javaspringlessons.dto.ProductDTO;
+import org.example.rest.model.ProductDto;
 import com.example.javaspringlessons.entity.Product;
 import org.mapstruct.*;
 
@@ -8,21 +8,21 @@ import org.mapstruct.*;
 public interface ProductMapper {
 
     @Mapping(target = "status", source = "quantity",qualifiedByName = "parseStatus")
-    ProductDTO toDto(Product product);
+    ProductDto toDto(Product product);
 
-    Product toProduct(ProductDTO productDTO);
+    Product toProduct(ProductDto productDTO);
 
-    void updateProduct(@MappingTarget Product target, ProductDTO source);
+    void updateProduct(@MappingTarget Product target, ProductDto source);
 
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void patchProduct(@MappingTarget Product target, ProductDTO source);
+    void patchProduct(@MappingTarget Product target, ProductDto source);
 
     @Named("parseStatus")
-    default ProductDTO.StatusEnum parseStatus(Integer quantity){
+    default ProductDto.StatusEnum parseStatus(Integer quantity){
         if (quantity == 0){
-            return ProductDTO.StatusEnum.OUT_OF_STOCK;
+            return ProductDto.StatusEnum.OUT_OF_STOCK;
         }else {
-            return ProductDTO.StatusEnum.IN_STOCK;
+            return ProductDto.StatusEnum.IN_STOCK;
         }
     }
 

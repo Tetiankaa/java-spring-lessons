@@ -1,37 +1,43 @@
-package org.example.controller;
+package com.example.javaspringlessons.controller;
 
+import com.example.javaspringlessons.service.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.example.rest.controller.ProductsApi;
-import org.example.rest.model.ProductDto;
-import org.example.service.ProductService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.example.rest.model.ProductDto;
 
 import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-public class ProductController implements ProductsApi {
+@RequestMapping("/api/v1")
+public class ProductController implements org.example.rest.controller.ProductsApi {
 
     private final ProductService productService;
 
     @Override
-    public ResponseEntity<ProductDto> getProduct(Long id) {
-        return ResponseEntity.of(productService.findProduct(id));
+    public ResponseEntity<ProductDto> createProduct(ProductDto productDto) {
+       return ResponseEntity.ok(productService.createProduct(productDto));
     }
 
     @Override
-    public ResponseEntity<ProductDto> createProduct(ProductDto productDto) {
-        return ResponseEntity.ok(productService.createProduct(productDto));
+    public ResponseEntity<ProductDto> getProduct(Long id) {
+        return ResponseEntity.of(productService.fingProduct(id));
+    }
+
+    @Override
+    public ResponseEntity<List<ProductDto>> getProducts() {
+        return ResponseEntity.ok(productService.getProducts());
     }
 
     @Override
     public ResponseEntity<ProductDto> modifyProduct(Long id, ProductDto productDto) {
-        return ProductsApi.super.modifyProduct(id, productDto);
+        return ResponseEntity.ok(productService.updateProduct(id, productDto));
     }
 
     @Override
     public ResponseEntity<ProductDto> modifyProductPartially(Long id, ProductDto productDto) {
-        return ProductsApi.super.modifyProductPartially(id, productDto);
+        return ResponseEntity.ok(productService.patchProduct(id, productDto));
     }
 }
